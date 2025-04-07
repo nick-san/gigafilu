@@ -1,7 +1,11 @@
 #!/bin/bash
 
-echo ページのURLを入力:
-read url
+if [ $# -eq 0 ]; then
+  echo ページのURLを入力:
+  read url
+else
+  url=$1
+fi
 
 number=$(echo "$url" | sed -n 's|https://\([^.]\+\)\.gigafile\.nu.*|\1|p')
 file=$(echo "$url" | sed -n 's|https://[^.]\+\.gigafile\.nu/\(.*\)|\1|p')
