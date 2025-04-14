@@ -17,5 +17,6 @@ wget --keep-session-cookies --save-cookies=cookies.txt "$url"
 wget --load-cookies cookies.txt -r -k -E "https://$number.gigafile.nu/dl_zip.php?file=$file"
 
 rm ./*-*
+mv "./$number.gigafile.nu/dl_zip.php?file=$file" "./$number.gigafile.nu/dl_zip.php?file=$file.zip"
 
 echo "done"
